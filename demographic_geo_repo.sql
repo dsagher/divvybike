@@ -56,7 +56,6 @@ join
 	public.bikelane_4326 bl ON ST_DWithin(
 		ST_Transform(s.geom, 26916),
 		ST_Transform(bl.geom, 26916), 1000)
--- where s.id = 108
 )
 select
     id,
