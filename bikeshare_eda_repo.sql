@@ -188,14 +188,14 @@ select
   count(case when birthyear is null then 1 end) as null_count,
   count(case when birthyear is not null then 1 end) as not_null_count,
   (count(case when birthyear is null then 1 end) * 100.0 / count(*)) as total_null_percent,
-  (count(case when birthyear is not null then 1 end)) * 100.0 / COUNT(*)) as total_not_null_percent
+  (count(case when birthyear is not null then 1 end)) * 100.0 / count(*)) as total_not_null_percent
 from db_all_years;
 
 select
   count(case when gender is null then 1 end) as null_count,
   count(case when gender is not null then 1 end) as not_null_count,
   (count(case when gender is null then 1 end) * 100.0 / count(*)) as total_null_percent,
-  (count(case when gender is not null then 1 end) * 100.0 / COUNT(*)) as total_not_null_percent
+  (count(case when gender is not null then 1 end) * 100.0 / count(*)) as total_not_null_percent
 from db_all_years;
 
 ------------------------------------------------------------------
