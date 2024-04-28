@@ -123,6 +123,7 @@ drop view main_stations
 -- final query --> pulls together relevant station info, stats info, and classifies each station pairing on being
 -- above or below zip code average, or being the min or max for it's zip code. 
 -- also classifies which direction station_2 is from station_1 
+create view station_distance as
 
 with station_distance as (
 	
@@ -200,3 +201,39 @@ br_oneway,
 oneway_dir,
 geom
 from bikelanes
+
+------------------------------------------------------------
+
+
+with makepoint as (
+
+select
+	start_station_id,
+	end_station_id,
+	st_makepoint(start_lat, start_long) start_point,
+	st_makepoint(end_lat, end_long) end_point
+from 
+	public.spider_viz_2
+)
+
+select
+	sv.start_station_id,
+	sv.start_station_name,
+	sv.end_station_id,
+	sv.end_station_name,
+	sv.route_name,
+	sv.count_of_trips,
+	sv.year,
+	mp.start_point,
+	mp.end_point,
+	cb.community
+from
+	public.spider_viz_2 sv
+join
+	makepoint mp on mp.start_station_id = sv.start_station_id and
+	mp.end_station_id = sv.end_station_id
+left join 
+	 public.community_boundary cb on st_intersects(cb.geom, mp.start_point)
+	
+	
+select * from public.spider_viz_2

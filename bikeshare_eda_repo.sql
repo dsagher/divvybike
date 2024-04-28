@@ -136,7 +136,7 @@ order by 1,3
 
 ----------------------------------------------------
 
--- overall numbers over the last 4 years
+-- overall numbers 2016-2019
 
 select date_part('year', start_time) as year,
 	count(*) total
@@ -145,7 +145,7 @@ group by 1
 
 ------------------------------------------------------
 
--- seasonality
+-- overal number of trips by season
 
 select 
 date_part('year', start_time) as year,
@@ -213,3 +213,31 @@ where
     gender is not null
 group by 
     gender;
+	
+----------------------------------------------------------------
+
+-- count number of trips for each start station/end station pair with geospatial info
+-- for csv export into local server for spider viz 
+
+select 
+	db.start_station_id,
+	dss.name start_station_name,
+	db.end_station_id,
+	dse.name end_station_name,
+	dss.name||'---'||dse.name route_name,
+	count(trip_id) count_of_trips,
+	date_part('year', db.start_time) as year,
+	dss.latitude start_lat,
+	dss.longitude start_long,
+	dse.latitude end_lat,
+	dse.longitude end_long,
+from 
+	db_all_years db
+join
+	public.divvy_stations dss on db.start_station_id = dss.id
+join 
+	public.divvy_stations dse on db.end_station_id = dse.id
+where start_station_id != end_station_id
+group by 1, 2, 3, 4, 5, 7, 8, 9, 10, 11, 12
+having count(trip_id) > 10
+order by 7, 5, 6
