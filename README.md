@@ -15,6 +15,6 @@ This project provides information on:
 
 ### Links
 
-- Medium Article 
+- [Medium Article](https://medium.com/@daniel.sagher1/divvybike-expansion-project-dfa427869b93)
 - [Tableau Dashboard](https://public.tableau.com/app/profile/dan.sagher/viz/DivvyDash_17143258974750/Dashboard2)
 - [Linkedin](https://www.linkedin.com/in/dan-sagher/)
