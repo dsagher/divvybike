@@ -77,7 +77,6 @@ where
 
 create view main_stations as -- view creation: geospatial description of stations with two LOD(zipcode, neighborhood) attributes
 -- top n popularity segmented on customer type
--- euclidian distance from point to line justified via smallest distance in cartesian product (point --> line)
 
 select 
 	s.id station_id,
