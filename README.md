@@ -3,17 +3,17 @@
 ### Objective
 The goal of this project was to develop a SQL codebase and visual tool to determine the most effective placement of new bike-sharing stations for Chicago's DivvyBike system. Key factors considered included:
 
-* Customer Segmentation
-* Socioeconomic Indicators
-* Chicago Population Demographics
-* Inter-Station Proximity
-* Station Proximity to Bike Lanes
+* **Customer Segmentation**
+* **Socioeconomic Indicators**
+* **Chicago Population Demographics**
+* **Inter-Station Proximity**
+* **Station Proximity to Bike Lanes**
   
 ### Data
 Data for this project came from multiple sources:
 
-* Bikeshare data: Queried from a General Assembly database (read-only access).
-* Socioeconomic and demographic data: Sourced from Chicago's public data portal.
+* **Bikeshare data**: Queried from a General Assembly database (read-only access).
+* **Socioeconomic and demographic data**: Sourced from Chicago's public data portal.
   
 Due to the read-only nature of the General Assembly database, bikeshare data was queried, exported as CSV files, and then merged with population data in Tableau for visualization and analysis.
 
