@@ -30,10 +30,10 @@ Maps station location and performance data to corresponding zipcodes and communi
 4. `station_distance`
 Measures distances between a station and all other stations within the same zipcode, ranking station pairs by shortest to longest distance in the four cardinal directions. Outputs:
 
-  * Aggregated min, max, and average distances for station pairs within a zipcode.
-  * Classification of stations as below/above the average distance or as the min/max station within their zipcode.
+    * Aggregated min, max, and average distances for station pairs within a zipcode.
+    * Classification of stations as below/above the average distance or as the min/max station within their zipcode.
   
 ### Outputs
 
-[Blog Post & Visualizations](https://medium.com/@daniel.sagher1/divvybike-expansion-project-dfa427869b93)
-[Interactive Dashboard](https://public.tableau.com/app/profile/dan.sagher/viz/DivvyDash_17143258974750/Dashboard2)
+* [Blog Post & Visualizations](https://medium.com/@daniel.sagher1/divvybike-expansion-project-dfa427869b93)    
+* [Interactive Dashboard](https://public.tableau.com/app/profile/dan.sagher/viz/DivvyDash_17143258974750/Dashboard2)
